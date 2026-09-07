@@ -8,503 +8,466 @@
   <title>Bilash Devnath | Chemical Engineering Researcher</title>
   <style>
     :root{
-      --ink:#19202a;
-      --muted:#66707c;
-      --bg:#f8f7f4;
-      --paper:#ffffff;
-      --line:#e7e2dd;
-      --maroon:#811638;
-      --maroon-dark:#5f1029;
-      --green:#4d7c66;
-      --green-soft:#e9f1ec;
-      --cream:#f2ece4;
-      --shadow:0 24px 60px rgba(30,24,20,.10);
-      --max:1180px;
+      --ink:#19202a;--muted:#66707c;--bg:#f8f7f4;--paper:#ffffff;--line:#e7e2dd;
+      --maroon:#811638;--maroon-dark:#5f1029;--green:#4d7c66;--green-soft:#e9f1ec;
+      --cream:#f2ece4;--shadow:0 24px 60px rgba(30,24,20,.10);--max:1180px;
     }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.65;
-    }
-    img{display:block;max-width:100%}
-    a{color:inherit}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+    img{display:block;max-width:100%} a{color:inherit}
     .wrap{width:min(var(--max),calc(100% - 42px));margin:auto}
-    .topbar{
-      position:sticky;top:0;z-index:50;
-      background:rgba(248,247,244,.92);
-      border-bottom:1px solid rgba(129,22,56,.10);
-      backdrop-filter:blur(18px);
-    }
-    .nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{font-weight:850;letter-spacing:-.02em;text-decoration:none;font-size:1.08rem}
-    .brand b{color:var(--maroon)}
-    .navlinks{display:flex;align-items:center;gap:22px}
-    .navlinks a{font-size:.93rem;text-decoration:none;color:#4c5560}
-    .navlinks a:hover{color:var(--maroon)}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(248,247,244,.92);border-bottom:1px solid rgba(129,22,56,.10);backdrop-filter:blur(18px)}
+    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:850;letter-spacing:-.02em;text-decoration:none;font-size:1.08rem}.brand b{color:var(--maroon)}
+    .navlinks{display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:flex-end}.navlinks a{font-size:.91rem;text-decoration:none;color:#4c5560}.navlinks a:hover{color:var(--maroon)}
     .navlinks .cv{border:1px solid #d9cdd1;padding:9px 14px;border-radius:999px;color:var(--maroon);font-weight:750}
     .menu{display:none;border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:8px 10px;color:var(--ink)}
-    .hero{
-      display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:center;
-      padding:74px 0 76px;
-    }
-    .eyebrow{
-      display:inline-flex;gap:9px;align-items:center;
-      color:var(--maroon);font-size:.81rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
-    }
+    .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:64px;align-items:center;padding:74px 0 76px}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--maroon);font-size:.81rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
     .eyebrow:before{content:"";width:34px;height:2px;background:var(--maroon)}
-    h1{
-      font-size:clamp(3.5rem,7vw,6.7rem);
-      line-height:.96;letter-spacing:-.065em;margin:18px 0 24px;
-    }
-    h1 span{color:var(--maroon)}
-    .lead{font-size:1.22rem;color:#4e5964;max-width:760px}
-    .hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 30px}
-    .tag{
-      padding:8px 11px;border:1px solid #ded8d2;border-radius:999px;background:rgba(255,255,255,.7);
-      font-size:.86rem;color:#4d5963
-    }
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{
-      min-height:48px;padding:0 18px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;
-      gap:8px;text-decoration:none;font-weight:800;border:1px solid #d8d0cb;transition:.2s ease;
-    }
-    .btn:hover{transform:translateY(-2px)}
-    .btn.primary{background:var(--maroon);color:white;border-color:var(--maroon)}
-    .btn.secondary{background:var(--paper);color:var(--ink)}
-    .hero-photo{
-      position:relative;border-radius:32px;overflow:hidden;box-shadow:var(--shadow);
-      background:#d4d0cb;min-height:560px;
-    }
-    .hero-photo img{width:100%;height:100%;object-fit:cover;min-height:560px}
-    .hero-note{
-      position:absolute;left:22px;right:22px;bottom:22px;padding:16px 18px;border-radius:18px;
-      background:rgba(255,255,255,.93);backdrop-filter:blur(10px);box-shadow:0 14px 28px rgba(0,0,0,.10)
-    }
-    .hero-note strong{display:block;font-size:1rem}
-    .hero-note span{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
-    section{padding:82px 0}
-    .paper{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    h1{font-size:clamp(3.5rem,7vw,6.7rem);line-height:.96;letter-spacing:-.065em;margin:18px 0 24px}h1 span{color:var(--maroon)}
+    .lead{font-size:1.22rem;color:#4e5964;max-width:760px}.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin:24px 0 30px}
+    .tag{padding:8px 11px;border:1px solid #ded8d2;border-radius:999px;background:rgba(255,255,255,.7);font-size:.86rem;color:#4d5963}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}.btn{min-height:48px;padding:0 18px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;border:1px solid #d8d0cb;transition:.2s ease}.btn:hover{transform:translateY(-2px)}
+    .btn.primary{background:var(--maroon);color:white;border-color:var(--maroon)}.btn.secondary{background:var(--paper);color:var(--ink)}
+    .hero-photo{position:relative;border-radius:32px;overflow:hidden;box-shadow:var(--shadow);background:#d4d0cb;min-height:560px}.hero-photo img{width:100%;height:100%;object-fit:cover;min-height:560px}
+    .hero-note{position:absolute;left:22px;right:22px;bottom:22px;padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);box-shadow:0 14px 28px rgba(0,0,0,.10)}
+    .hero-note strong{display:block;font-size:1rem}.hero-note span{display:block;color:var(--muted);font-size:.88rem;margin-top:2px}
+    section{padding:82px 0}.paper{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .kicker{color:var(--maroon);font-weight:850;text-transform:uppercase;letter-spacing:.13em;font-size:.77rem}
     h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.045em;line-height:1.06;margin:10px 0 18px}
     .intro{font-size:1.08rem;color:var(--muted);max-width:850px;margin:0 0 34px}
     .about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:54px;align-items:center}
-    .about-photo{border-radius:24px;overflow:hidden;background:#fff}
-    .about-photo img{width:100%;height:auto;object-fit:contain}
-    .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}
-    .fact{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}
-    .fact small{display:block;color:#8b9299;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;font-weight:750}
-    .fact strong{display:block;margin-top:4px}
-    .featured{
-      display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;
-      border:1px solid var(--line);border-radius:28px;padding:28px;background:#fff;box-shadow:0 16px 44px rgba(35,25,20,.05)
-    }
-    .featured-visual{border-radius:20px;overflow:hidden;background:#f2f1ed}
-    .featured-visual img{width:100%;aspect-ratio:16/10;object-fit:contain;background:white}
+    .about-photo{border-radius:24px;overflow:hidden;background:#fff}.about-photo img{width:100%;height:auto;object-fit:contain}
+    .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}.fact{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}
+    .fact small{display:block;color:#8b9299;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;font-weight:750}.fact strong{display:block;margin-top:4px}
+    .featured{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;border:1px solid var(--line);border-radius:28px;padding:28px;background:#fff;box-shadow:0 16px 44px rgba(35,25,20,.05)}
+    .featured-visual{border-radius:20px;overflow:hidden;background:#f2f1ed}.featured-visual img{width:100%;aspect-ratio:16/10;object-fit:contain;background:white}
     .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#f7e8ed;color:var(--maroon);font-size:.78rem;font-weight:800}
-    .featured h3{font-size:1.8rem;line-height:1.15;letter-spacing:-.025em;margin:14px 0 12px}
-    .featured p{color:var(--muted)}
-    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
-    .metric{padding:14px;border-radius:14px;background:var(--cream)}
-    .metric strong{display:block;font-size:1.15rem;color:var(--maroon)}
-    .metric span{font-size:.78rem;color:#6c635f}
-    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
-    .project{
-      display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;
-      min-height:100%;transition:.2s ease;
+    .featured h3{font-size:1.8rem;line-height:1.15;letter-spacing:-.025em;margin:14px 0 12px}.featured p{color:var(--muted)}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}.metric{padding:14px;border-radius:14px;background:var(--cream)}.metric strong{display:block;font-size:1.15rem;color:var(--maroon)}.metric span{font-size:.78rem;color:#6c635f}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.project{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:#fff;min-height:100%;transition:.2s ease}.project:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,27,21,.07)}
+    .project .image{height:210px;background:#f2f0ed;overflow:hidden}.project .image img{width:100%;height:100%;object-fit:cover}.project .image.contain img{object-fit:contain;background:#fff;padding:10px}.project .body{padding:20px;display:flex;flex-direction:column;flex:1}.project .label{color:var(--green);font-size:.75rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}.project h3{font-size:1.18rem;line-height:1.25;margin:10px 0 8px}.project p{color:var(--muted);font-size:.93rem;margin:0}.project .status{margin-top:auto;padding-top:16px;font-size:.82rem;color:#7f858b}
+    .story{margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white}.story>div{padding:22px;border-right:1px solid var(--line)}.story>div:last-child{border-right:0}.story .n{color:var(--maroon);font-weight:900;font-size:.8rem}.story strong{display:block;margin:6px 0}.story span{color:var(--muted);font-size:.88rem}
+    .pubs{display:grid;gap:12px}.pub{display:grid;grid-template-columns:80px 1fr auto;gap:20px;align-items:start;padding:22px 0;border-top:1px solid var(--line)}.pub-year{font-weight:900;color:var(--maroon)}.pub-title{font-weight:800;line-height:1.35;margin-bottom:5px}.pub-meta{color:var(--muted);font-size:.92rem}.doi{text-decoration:none;color:var(--maroon);font-size:.88rem;font-weight:800;white-space:nowrap}
+    .recognition{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px
     }
-    .project:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(34,27,21,.07)}
-    .project .image{height:210px;background:#f2f0ed;overflow:hidden}
-    .project .image img{width:100%;height:100%;object-fit:cover}
-    .project .image.contain img{object-fit:contain;background:#fff;padding:10px}
-    .project .body{padding:20px;display:flex;flex-direction:column;flex:1}
-    .project .label{color:var(--green);font-size:.75rem;font-weight:850;letter-spacing:.11em;text-transform:uppercase}
-    .project h3{font-size:1.18rem;line-height:1.25;margin:10px 0 8px}
-    .project p{color:var(--muted);font-size:.93rem;margin:0}
-    .project .status{margin-top:auto;padding-top:16px;font-size:.82rem;color:#7f858b}
-    .story{
-      margin-top:38px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white
+    .award{
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:white;
+      overflow:hidden;
+      transition:.2s ease
     }
-    .story > div{padding:22px;border-right:1px solid var(--line)}
-    .story > div:last-child{border-right:0}
-    .story .n{color:var(--maroon);font-weight:900;font-size:.8rem}
-    .story strong{display:block;margin:6px 0}
-    .story span{color:var(--muted);font-size:.88rem}
-    .pubs{display:grid;gap:12px}
-    .pub{
-      display:grid;grid-template-columns:80px 1fr auto;gap:20px;align-items:start;padding:22px 0;border-top:1px solid var(--line)
+    .award:hover{
+      transform:translateY(-3px);
+      box-shadow:0 16px 40px rgba(34,27,21,.08)
     }
-    .pub-year{font-weight:900;color:var(--maroon)}
-    .pub-title{font-weight:800;line-height:1.35;margin-bottom:5px}
-    .pub-meta{color:var(--muted);font-size:.92rem}
-    .doi{text-decoration:none;color:var(--maroon);font-size:.88rem;font-weight:800;white-space:nowrap}
-    .recognition{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .award{border:1px solid var(--line);border-radius:18px;padding:18px;background:white}
-    .award .year{font-size:.76rem;color:var(--maroon);font-weight:850}
-    .award strong{display:block;margin:7px 0 4px}
-    .award span{font-size:.89rem;color:var(--muted)}
-    .group-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}
-    .group-photo{border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
-    .group-photo img{width:100%}
-    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-    .chip{background:var(--green-soft);color:#315b47;border-radius:999px;padding:8px 11px;font-size:.84rem;font-weight:700}
-    .contact-card{
-      padding:42px;border-radius:28px;background:linear-gradient(135deg,var(--maroon-dark),var(--maroon));
-      color:#fff;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center
+    .award-photo{
+      position:relative;
+      width:100%;
+      height:190px;
+      overflow:hidden;
+      background:linear-gradient(135deg,#f4eeef,#eef3ef)
     }
-    .contact-card .kicker{color:#f7cbd8}
-    .contact-card h2{margin-bottom:12px}
-    .contact-card p{color:#f4dfe5;margin:0}
-    .contact-links{display:grid;gap:10px}
-    .contact-links a{padding:14px 16px;border:1px solid rgba(255,255,255,.25);border-radius:13px;text-decoration:none;background:rgba(255,255,255,.08);font-weight:750}
-    footer{padding:34px 0 48px;color:#7b8087;font-size:.88rem}
-    .footer{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:24px}
+    .award-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover
+    }
+    .award-photo.placeholder::after{
+      content:"Add award photo";
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      color:#8d8387;
+      font-size:.82rem;
+      font-weight:800;
+      letter-spacing:.05em;
+      text-transform:uppercase
+    }
+    .award-body{padding:18px}
+    .award .year{
+      font-size:.76rem;
+      color:var(--maroon);
+      font-weight:850;
+      letter-spacing:.06em;
+      text-transform:uppercase
+    }
+    .award strong{
+      display:block;
+      margin:7px 0 4px;
+      font-size:1.02rem;
+      line-height:1.35
+    }
+    .award span{
+      display:block;
+      font-size:.89rem;
+      color:var(--muted)
+    }
+    .conf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}.conf-card{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;display:flex;flex-direction:column;min-height:190px}.conf-card .year{font-size:.75rem;font-weight:850;color:var(--green);letter-spacing:.08em;text-transform:uppercase}.conf-card h3{font-size:1.08rem;line-height:1.25;margin:8px 0}.conf-card p{font-size:.9rem;color:var(--muted);margin:0 0 16px}.conf-card a{margin-top:auto;text-decoration:none;color:var(--maroon);font-weight:800;font-size:.86rem}
+    .leadership-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.group-photo{border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.group-photo img{width:100%}.lead-list{display:grid;gap:12px}.lead-item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.lead-item .mini{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--green);font-weight:850}.lead-item strong{display:block;margin:4px 0}.lead-item p{margin:0;color:var(--muted);font-size:.91rem}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.chip{background:var(--green-soft);color:#315b47;border-radius:999px;padding:8px 11px;font-size:.84rem;font-weight:700}
+    .contact-card{padding:42px;border-radius:28px;background:linear-gradient(135deg,var(--maroon-dark),var(--maroon));color:#fff;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}.contact-card .kicker{color:#f7cbd8}.contact-card h2{margin-bottom:12px}.contact-card p{color:#f4dfe5;margin:0}.contact-links{display:grid;gap:10px}.contact-links a{padding:14px 16px;border:1px solid rgba(255,255,255,.25);border-radius:13px;text-decoration:none;background:rgba(255,255,255,.08);font-weight:750}
+    footer{padding:34px 0 48px;color:#7b8087;font-size:.88rem}.footer{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:24px}
     @media(max-width:980px){
-      .hero,.about-grid,.featured,.group-grid,.contact-card{grid-template-columns:1fr}
-      .hero{gap:38px}
-      .hero-photo{min-height:0;max-width:680px}
-      .hero-photo img{min-height:0;aspect-ratio:4/5}
-      .projects{grid-template-columns:repeat(2,1fr)}
-      .story{grid-template-columns:repeat(2,1fr)}
-      .story > div:nth-child(2){border-right:0}
-      .story > div:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .recognition{grid-template-columns:repeat(2,1fr)}
+      .hero,.about-grid,.featured,.leadership-grid,.contact-card{grid-template-columns:1fr}.hero{gap:38px}.hero-photo{min-height:0;max-width:680px}.hero-photo img{min-height:0;aspect-ratio:4/5}.projects{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:repeat(2,1fr)}.story>div:nth-child(2){border-right:0}.story>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.recognition,.conf-grid{grid-template-columns:repeat(2,1fr)}
     }
     @media(max-width:720px){
-      .wrap{width:min(var(--max),calc(100% - 28px))}
-      .menu{display:block}
-      .navlinks{
-        display:none;position:absolute;left:14px;right:14px;top:64px;flex-direction:column;align-items:flex-start;
-        gap:14px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow)
-      }
-      .navlinks.open{display:flex}
-      .hero{padding-top:50px}
-      h1{font-size:3.65rem}
-      section{padding:64px 0}
-      .facts,.projects,.metrics,.recognition,.story{grid-template-columns:1fr}
-      .story > div{border-right:0;border-bottom:1px solid var(--line)}
-      .story > div:last-child{border-bottom:0}
-      .pub{grid-template-columns:1fr;gap:7px}
-      .contact-card{padding:28px}
-      .footer{flex-direction:column}
+      .wrap{width:min(var(--max),calc(100% - 28px))}.menu{display:block}.navlinks{display:none;position:absolute;left:14px;right:14px;top:64px;flex-direction:column;align-items:flex-start;gap:14px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow)}.navlinks.open{display:flex}.hero{padding-top:50px}h1{font-size:3.65rem}section{padding:64px 0}.facts,.projects,.metrics,.recognition,.conf-grid,.story{grid-template-columns:1fr}.story>div{border-right:0;border-bottom:1px solid var(--line)}.story>div:last-child{border-bottom:0}.pub{grid-template-columns:1fr;gap:7px}.contact-card{padding:28px}.footer{flex-direction:column}
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="wrap nav">
-      <a class="brand" href="#home">Bilash <b>Devnath</b></a>
-      <button class="menu" id="menuBtn">Menu</button>
-      <nav class="navlinks" id="navLinks" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#recognition">Recognition</a>
-        <a href="#contact">Contact</a>
-        <a href="https://scholar.google.com/citations?user=A9I6fXMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar ↗</a>
-        <a href="https://orcid.org/0009-0006-0659-3013" target="_blank" rel="noopener">ORCID ↗</a>
-        <a class="cv" href="Bilash_Devnath_CV.pdf" target="_blank">CV ↗</a>
-      </nav>
-    </div>
-  </header>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home">Bilash <b>Devnath</b></a>
+    <button class="menu" id="menuBtn">Menu</button>
+    <nav class="navlinks" id="navLinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
+      <a href="https://scholar.google.com/citations?user=A9I6fXMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Scholar ↗</a>
+      <a href="https://orcid.org/0009-0006-0659-3013" target="_blank" rel="noopener">ORCID ↗</a>
+      <a class="cv" href="Bilash_Devnath_CV.pdf" target="_blank">CV ↗</a>
+    </nav>
+  </div>
+</header>
 
-  <main id="home">
-    <div class="wrap hero">
+<main id="home">
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Chemical Engineering Researcher</div>
+      <h1>Bilash <span>Devnath</span></h1>
+      <p class="lead">PhD Candidate at Florida Institute of Technology developing chemical-engineering approaches for <strong>nutrient recovery, hydrothermal processing, selective separations, critical materials, and sustainable resource systems.</strong></p>
+      <div class="hero-tags"><span class="tag">Resource Recovery</span><span class="tag">Hydrothermal Processing</span><span class="tag">Separations</span><span class="tag">Critical Materials</span><span class="tag">TEA / LCA</span></div>
+      <div class="actions">
+        <a class="btn primary" href="#research">Explore my research →</a>
+        <a class="btn secondary" href="Bilash_Devnath_CV.pdf" target="_blank">Download CV</a>
+        <a class="btn secondary" href="mailto:bdevnath2023@my.fit.edu">Email me</a>
+        <a class="btn secondary" href="https://scholar.google.com/citations?user=A9I6fXMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/bilash-hero.webp" alt="Portrait of Bilash Devnath">
+      <div class="hero-note"><strong>PhD Candidate · Chemical Engineering</strong><span>Florida Institute of Technology · Melbourne, Florida</span></div>
+    </div>
+  </div>
+
+  <section id="about" class="paper">
+    <div class="wrap about-grid">
+      <div class="about-photo"><img src="assets/research-collage.webp" alt="Diagram summarizing sustainable nutrient cycles, resource recovery, slow-release fertilizer, materials characterization, and process scale-up"></div>
       <div>
-        <div class="eyebrow">Chemical Engineering Researcher</div>
-        <h1>Bilash <span>Devnath</span></h1>
-        <p class="lead">
-          PhD Candidate at Florida Institute of Technology developing chemical-engineering approaches for
-          <strong>nutrient recovery, hydrothermal processing, selective separations, critical materials, and sustainable resource systems.</strong>
-        </p>
-        <div class="hero-tags">
-          <span class="tag">Resource Recovery</span>
-          <span class="tag">Hydrothermal Processing</span>
-          <span class="tag">Separations</span>
-          <span class="tag">Critical Materials</span>
-          <span class="tag">TEA / LCA</span>
-        </div>
-        <div class="actions">
-          <a class="btn primary" href="#research">Explore my research →</a>
-          <a class="btn secondary" href="Bilash_Devnath_CV.pdf" target="_blank">Download CV</a>
-          <a class="btn secondary" href="mailto:bdevnath2023@my.fit.edu">Email me</a>
-          <a class="btn secondary" href="https://scholar.google.com/citations?user=A9I6fXMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a>
-          <a class="btn secondary" href="https://orcid.org/0009-0006-0659-3013" target="_blank" rel="noopener">ORCID ↗</a>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <img src="assets/bilash-hero.webp" alt="Portrait of Bilash Devnath">
-        <div class="hero-note">
-          <strong>PhD Candidate · Chemical Engineering</strong>
-          <span>Florida Institute of Technology · Melbourne, Florida</span>
+        <div class="kicker">About me</div>
+        <h2>Turning complex waste streams into recoverable resources.</h2>
+        <p class="intro">My work sits at the intersection of chemical engineering, environmental sustainability, and materials science. I study how hydrothermal chemistry and separation processes can transform agricultural and industrial wastes into useful nutrient products, carbon-rich materials, and recoverable critical resources.</p>
+        <p class="intro">I am especially interested in research that connects laboratory experiments with real-world deployment: process scale-up, economics, life-cycle impacts, product performance, and data-driven process design.</p>
+        <div class="facts">
+          <div class="fact"><small>Current position</small><strong>PhD Candidate, Florida Tech</strong></div>
+          <div class="fact"><small>Undergraduate education</small><strong>Bangladesh University of Engineering and Technology (BUET) · Chemical Engineering</strong></div>
+          <div class="fact"><small>Research approach</small><strong>Literature & data → Experiment → Product → Validation → Scale-up</strong></div>
+          <div class="fact"><small>Current interests</small><strong>Fertilizer development, critical materials, nutrient circularity & sustainable R&amp;D</strong></div>
         </div>
       </div>
     </div>
+  </section>
 
-    <section id="about" class="paper">
-      <div class="wrap about-grid">
-        <div class="about-photo">
-          <img src="assets/bilash-about.webp" alt="Bilash Devnath">
-        </div>
+  <section id="research">
+    <div class="wrap">
+      <div class="kicker">Featured research</div>
+      <h2>Nutrient recovery & slow-release fertilizer from dairy manure</h2>
+      <p class="intro">My primary research develops an acid-mediated mild hydrothermal route to mobilize nutrients from dairy manure, recover them through alkaline precipitation, and evaluate the recovered slow-release multi-nutrient matrix (SRMNM).</p>
+
+      <article class="featured">
+        <div class="featured-visual"><img src="assets/nutrient-recovery-overview.webp" alt="Graphical overview of dairy manure nutrient recovery and slow-release nutrient availability"></div>
         <div>
-          <div class="kicker">About me</div>
-          <h2>Turning complex waste streams into recoverable resources.</h2>
-          <p class="intro">
-            My work sits at the intersection of chemical engineering, environmental sustainability, and materials science.
-            I study how hydrothermal chemistry and separation processes can transform agricultural and industrial wastes into
-            useful nutrient products, carbon-rich materials, and recoverable critical resources.
-          </p>
-          <p class="intro">
-            I am especially interested in research that connects laboratory experiments with real-world deployment:
-            process scale-up, economics, life-cycle impacts, product performance, and data-driven process design.
-          </p>
-          <div class="facts">
-            <div class="fact"><small>Current position</small><strong>PhD Candidate, Florida Tech</strong></div>
-            <div class="fact"><small>Undergraduate education</small><strong> Bangladesh University of Engineering and Technology (BUET) · Chemical Engineering</strong></div>
-            <div class="fact"><small>Research Approach</small><strong> Literature and ML guided experimental process development → Experiment  → Product → Validate → Scale-up</strong></div>
-            <div class="fact"><small>Current interests</small><strong>Fertilizer Development, Critical materials, nutrient circularity & sustainable R&amp;D</strong></div>
+          <span class="pill">Published research</span>
+          <h3>From dairy manure to a recoverable multi-nutrient product</h3>
+          <p>The process combines controlled acidification, mild hydrothermal treatment, solid-liquid separation, alkaline precipitation, and product characterization. Release tests compare immediate water solubility with acidic root-zone-like conditions to evaluate nutrient availability.</p>
+          <div class="metrics">
+            <div class="metric"><strong>87.6–91.5%</strong><span>Manure P mobilized to aqueous phase</span></div>
+            <div class="metric"><strong>87.7–91.7%</strong><span>Dissolved P recovered by precipitation</span></div>
+            <div class="metric"><strong>4.36–4.79 wt%</strong><span>P in recovered SRMNM</span></div>
           </div>
         </div>
+      </article>
+
+      <div class="story">
+        <div><div class="n">01</div><strong>Waste stream</strong><span>Start with nutrient-rich dairy manure.</span></div>
+        <div><div class="n">02</div><strong>Selective mobilization</strong><span>Use pH and hydrothermal chemistry to move target nutrients into solution.</span></div>
+        <div><div class="n">03</div><strong>Capture & separation</strong><span>Recover a concentrated solid through precipitation and filtration.</span></div>
+        <div><div class="n">04</div><strong>Validate the product</strong><span>Characterize composition, structure, release, economics, and environmental performance.</span></div>
       </div>
-    </section>
 
-    <section id="research">
-      <div class="wrap">
-        <div class="kicker">Featured research</div>
-        <h2>Nutrient recovery & slow-release fertilizer from dairy manure</h2>
-        <p class="intro">
-          My primary research develops an acid-mediated mild hydrothermal route to mobilize nutrients from dairy manure,
-          recover them through alkaline precipitation, and evaluate the recovered slow-release multi-nutrient matrix (SRMNM).
-        </p>
+      <div style="height:48px"></div>
+      <div class="kicker">Current & broader portfolio</div>
+      <h2>Research directions</h2>
+      <p class="intro">My current work expands this framework beyond a single product or feedstock.</p>
 
-        <article class="featured">
-          <div class="featured-visual">
-            <img src="assets/nutrient-recovery-overview.webp" alt="Graphical overview of dairy manure nutrient recovery and slow-release nutrient availability">
+      <div class="projects">
+        <article class="project">
+          <div class="image"><img src="assets/rhizosphere-release.webp" alt="Conceptual illustration of nutrient mobilization in the rhizosphere"></div>
+          <div class="body"><div class="label">Current work</div><h3>Sequential nutrient-release profiling</h3><p>Evaluating readily soluble, moderately bound, rhizosphere-mobilizable, and strongly retained nutrient fractions under progressively stronger extraction conditions.</p><div class="status">Product quality & agronomic-release behavior</div></div>
+        </article>
+        <article class="project">
+          <div class="image contain"><img src="assets/centralized-facility.webp" alt="Conceptual centralized hydrothermal treatment plant"></div>
+          <div class="body"><div class="label">Scale-up</div><h3>Techno-economic & life-cycle assessment</h3><p>Scaling laboratory nutrient recovery to a conceptual centralized dairy-manure treatment system and evaluating process economics, utilities, and environmental tradeoffs.</p><div class="status">TEA · LCA · Process systems</div></div>
+        </article>
+        <article class="project">
+          <div class="image"><img src="assets/elemental-mapping.webp" alt="Elemental mapping of the recovered multi-nutrient matrix"></div>
+          <div class="body"><div class="label">Materials characterization</div><h3>Hydrochar & recovered nutrient products</h3><p>Using spectroscopy, microscopy, thermal analysis, elemental analysis, and diffraction to connect processing conditions with material chemistry and performance.</p><div class="status">SEM/EDS · XRD · FTIR · TGA · CHNS · LC-MS · IC</div></div>
+        </article>
+        <article class="project">
+          <div class="image contain"><img src="assets/process-flow-diagram.webp" alt="Simplified chemical process-flow diagram for scale-up"></div>
+          <div class="body"><div class="label">Critical materials</div><h3>Selective recovery from complex waste streams</h3><p>Extending the mobilization–capture–validation framework toward phosphate, rare-earth elements, and selective metal recovery from waste-derived feedstocks.</p><div class="status">Leaching · Sorption · Precipitation · Purification</div></div>
+        </article>
+        <article class="project">
+          <div class="image contain" style="background:linear-gradient(135deg,#f6efe9,#eef3ef);display:grid;place-items:center;padding:24px"><div style="text-align:center"><div style="font-size:2.5rem;font-weight:900;color:#811638">ML</div><div style="font-weight:800;margin-top:4px">Biochar × Nutrients × Soil Conditions</div></div></div>
+          <div class="body"><div class="label">Upcoming direction</div><h3>ML-guided nutrient retention & release</h3><p>Building Python-based XGBoost and random-forest workflows to connect biochar properties, soil-like conditions, adsorption, desorption, and nutrient performance.</p><div class="status">Python · XGBoost · Random Forest · SHAP</div></div>
+        </article>
+        <article class="project">
+          <div class="image contain" style="background:linear-gradient(135deg,#eef3ef,#f6efe9);display:grid;place-items:center;padding:24px"><div style="text-align:center"><div style="font-size:2.1rem;font-weight:900;color:#4d7c66">Hydrochar</div><div style="font-weight:800;margin-top:4px">Safety · Toxicity · Soil Use</div></div></div>
+          <div class="body"><div class="label">Broader portfolio</div><h3>Hydrochar environmental & fire-safety assessment</h3><p>Assessing post-treatment strategies, phytotoxicity, ecotoxicity, and fire behavior to better define safe and useful applications for hydrochar.</p><div class="status">Environmental performance · Material safety</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" class="paper">
+    <div class="wrap">
+      <div class="kicker">Selected publications</div><h2>Peer-reviewed research</h2>
+      <p class="intro">Selected papers spanning nutrient recovery, hydrothermal conversion, carbon stability, and functional materials.</p>
+      <div class="pubs">
+        <div class="pub"><div class="pub-year">2026</div><div><div class="pub-title">Recovery of slow-release multi-nutrient matrix from dairy manure through acid-mediated mild hydrothermal treatment</div><div class="pub-meta">B. Devnath, B. Gao, M. T. Reza · Waste Management, 224, 115732</div></div><a class="doi" href="https://doi.org/10.1016/j.wasman.2026.115732" target="_blank">DOI ↗</a></div>
+        <div class="pub"><div class="pub-year">2026</div><div><div class="pub-title">Nutrient recovery from co-hydrothermal carbonization of animal manures: Synergistic effects on hydrochar properties and agronomic potential</div><div class="pub-meta">B. Devnath, S. Khanal, A. Shah, M. T. Reza · Waste Management, 213, 115391</div></div><a class="doi" href="https://doi.org/10.1016/j.wasman.2026.115391" target="_blank">DOI ↗</a></div>
+        <div class="pub"><div class="pub-year">2026</div><div><div class="pub-title">Hydrochar and biochar from dairy manure as stable carbon amendments for greenhouse gas mitigation and carbon sequestration in concentrated animal feeding operations</div><div class="pub-meta">B. Devnath, S. Khanal, A. Shah, M. T. Reza · Environmental Research Communications, 8, 065015</div></div><a class="doi" href="https://doi.org/10.1088/2515-7620/ae74a0" target="_blank">DOI ↗</a></div>
+        <div class="pub"><div class="pub-year">2026</div><div><div class="pub-title">Magnetically retrievable core@shell nanocomposites for rare earth element adsorption: Experimental and machine learning insights</div><div class="pub-meta">M. Shokouhimehr, L. F. Guidugli, R. C. Smith, C. Knight, B. Devnath, M. T. Reza · Langmuir, 42(28), 20456–20467</div></div><a class="doi" href="https://doi.org/10.1021/acs.langmuir.6c02166" target="_blank">DOI ↗</a></div>
+        <div class="pub"><div class="pub-year">2024</div><div><div class="pub-title">Influence of Hydrothermal Carbonization (HTC) Temperature on Hydrochar and Process Liquid for Poultry, Swine, and Dairy Manure</div><div class="pub-meta">B. Devnath, S. Khanal, A. Shah, M. T. Reza · Environments, 11, 150</div></div><a class="doi" href="https://doi.org/10.3390/environments11070150" target="_blank">DOI ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="wrap">
+      <div class="kicker">Awards & Recognition</div>
+      <h2>Recognition for research, scholarship & technical communication.</h2>
+      <p class="intro">
+        Selected awards and honors recognizing research achievement,
+        scientific communication, scholarship, and academic contribution.
+      </p>
+
+      <div class="recognition">
+
+        <article class="award">
+          <div class="award-photo">
+            <img src="assets/award-outstanding-graduate.webp"
+                 alt="Outstanding Graduate Student of the Year"
+                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
           </div>
-          <div>
-            <span class="pill">Published research</span>
-            <h3>From dairy manure to a recoverable multi-nutrient product</h3>
-            <p>
-              The process combines controlled acidification, mild hydrothermal treatment, solid-liquid separation,
-              alkaline precipitation, and product characterization. Release tests compare immediate water solubility with
-              acidic root-zone-like conditions to evaluate nutrient availability.
-            </p>
-            <div class="metrics">
-              <div class="metric"><strong>pH 2</strong><span>Acid-mediated nutrient mobilization</span></div>
-              <div class="metric"><strong>120–160 °C</strong><span>Mild hydrothermal treatment</span></div>
-              <div class="metric"><strong>pH 9</strong><span>Alkaline nutrient recovery</span></div>
-            </div>
+          <div class="award-body">
+            <div class="year">2025–2026</div>
+            <strong>Outstanding Graduate Student of the Year</strong>
+            <span>Florida Institute of Technology</span>
           </div>
         </article>
 
-        <div class="story">
-          <div><div class="n">01</div><strong>Waste stream</strong><span>Start with nutrient-rich dairy manure.</span></div>
-          <div><div class="n">02</div><strong>Selective mobilization</strong><span>Use pH and hydrothermal chemistry to move target nutrients into solution.</span></div>
-          <div><div class="n">03</div><strong>Capture & separation</strong><span>Recover a concentrated solid through precipitation and filtration.</span></div>
-          <div><div class="n">04</div><strong>Validate the product</strong><span>Characterize composition, structure, release, economics, and environmental performance.</span></div>
-        </div>
+        <article class="award">
+          <div class="award-photo">
+            <img src="assets/award-nasa-space-grant.webp"
+                 alt="NASA Florida Space Grant Consortium Award"
+                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          </div>
+          <div class="award-body">
+            <div class="year">2025</div>
+            <strong>NASA Florida Space Grant Consortium Award</strong>
+            <span>Near Space Investigation Program</span>
+          </div>
+        </article>
 
-        <div style="height:48px"></div>
-        <div class="kicker">Current & broader portfolio</div>
-        <h2>Research directions</h2>
-        <p class="intro">My current work expands this framework beyond a single product or feedstock.</p>
+        <article class="award">
+          <div class="award-photo">
+            <img src="assets/award-fas-2025.webp"
+                 alt="Florida Academy of Sciences presentation award"
+                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          </div>
+          <div class="award-body">
+            <div class="year">2025</div>
+            <strong>Outstanding Graduate Student Presentation</strong>
+            <span>Florida Academy of Sciences</span>
+          </div>
+        </article>
 
-        <div class="projects">
-          <article class="project">
-            <div class="image"><img src="assets/rhizosphere-release.webp" alt="Conceptual illustration of nutrient mobilization in the rhizosphere"></div>
-            <div class="body">
-              <div class="label">Current work</div>
-              <h3>Sequential nutrient-release profiling</h3>
-              <p>Evaluating readily soluble, moderately bound, rhizosphere-mobilizable, and strongly retained nutrient fractions under progressively stronger extraction conditions.</p>
-              <div class="status">Product quality & agronomic-release behavior</div>
-            </div>
-          </article>
+        <article class="award">
+          <div class="award-photo">
+            <img src="assets/award-asabe-florida-2025.webp"
+                 alt="ASABE Florida Section presentation award"
+                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          </div>
+          <div class="award-body">
+            <div class="year">2025</div>
+            <strong>Outstanding Student Presentation</strong>
+            <span>ASABE Florida Section</span>
+          </div>
+        </article>
 
-          <article class="project">
-            <div class="image contain"><img src="assets/centralized-facility.png" alt="Conceptual centralized hydrothermal treatment plant"></div>
-            <div class="body">
-              <div class="label">Scale-up</div>
-              <h3>Techno-economic & life-cycle assessment</h3>
-              <p>Scaling laboratory nutrient recovery to a conceptual centralized dairy-manure treatment system and evaluating process economics, utilities, and environmental tradeoffs.</p>
-              <div class="status">TEA · LCA · Process systems</div>
-            </div>
-          </article>
+        <article class="award">
+          <div class="award-photo">
+            <img src="assets/award-phi-kappa-phi.webp"
+                 alt="Phi Kappa Phi Honor Society"
+                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          </div>
+          <div class="award-body">
+            <div class="year">2025</div>
+            <strong>Phi Kappa Phi Honor Society</strong>
+            <span>Inducted at Florida Institute of Technology</span>
+          </div>
+        </article>
 
-          <article class="project">
-            <div class="image"><img src="assets/elemental-mapping.webp" alt="Elemental mapping of the recovered multi-nutrient matrix"></div>
-            <div class="body">
-              <div class="label">Materials characterization</div>
-              <h3>Hydrochar & recovered nutrient products</h3>
-              <p>Using spectroscopy, microscopy, thermal analysis, elemental analysis, and diffraction to connect processing conditions with material chemistry and performance.</p>
-              <div class="status">SEM/EDS · XRD · FTIR · TGA · CHNS · LC-MS · IC</div>
-            </div>
-          </article>
+        <article class="award">
+          <div class="award-photo">
+            <img src="assets/award-asabe-2024.webp"
+                 alt="ASABE Presentation Excellence Award"
+                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          </div>
+          <div class="award-body">
+            <div class="year">2024</div>
+            <strong>Presentation Excellence Award</strong>
+            <span>ASABE Annual International Meeting</span>
+          </div>
+        </article>
 
-          <article class="project">
-            <div class="image contain"><img src="assets/process-flow-diagram.webp" alt="Simplified chemical process-flow diagram for scale-up"></div>
-            <div class="body">
-              <div class="label">Critical materials</div>
-              <h3>Selective recovery from complex waste streams</h3>
-              <p>Extending the mobilization–capture–validation framework toward phosphate, rare-earth elements, and selective metal recovery from waste-derived feedstocks.</p>
-              <div class="status">Leaching · Sorption · Precipitation · Purification</div>
-            </div>
-          </article>
+        <article class="award">
+          <div class="award-photo">
+            <img src="assets/award-hydrochar-2024.webp"
+                 alt="Hydrochar and Biochar Conference student presentation award"
+                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          </div>
+          <div class="award-body">
+            <div class="year">2024</div>
+            <strong>2nd Best Student Presentation</strong>
+            <span>Hydrochar & Biochar Conference</span>
+          </div>
+        </article>
 
-          <article class="project">
-            <div class="image contain" style="background:linear-gradient(135deg,#f6efe9,#eef3ef);display:grid;place-items:center;padding:24px">
-              <div style="text-align:center">
-                <div style="font-size:2.5rem;font-weight:900;color:#811638">ML</div>
-                <div style="font-weight:800;margin-top:4px">Biochar × Nutrients × Soil Conditions</div>
-              </div>
-            </div>
-            <div class="body">
-              <div class="label">Upcoming direction</div>
-              <h3>ML-guided nutrient retention & release</h3>
-              <p>Building Python-based XGBoost and random-forest workflows to connect biochar properties, soil-like conditions, adsorption, desorption, and nutrient performance.</p>
-              <div class="status">Python · XGBoost · Random Forest · SHAP</div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="image contain" style="background:linear-gradient(135deg,#eef3ef,#f6efe9);display:grid;place-items:center;padding:24px">
-              <div style="text-align:center">
-                <div style="font-size:2.1rem;font-weight:900;color:#4d7c66">Hydrochar</div>
-                <div style="font-weight:800;margin-top:4px">Safety · Toxicity · Soil Use</div>
-              </div>
-            </div>
-            <div class="body">
-              <div class="label">Broader portfolio</div>
-              <h3>Hydrochar environmental & fire-safety assessment</h3>
-              <p>Assessing post-treatment strategies, phytotoxicity, ecotoxicity, and fire behavior to better define safe and useful applications for hydrochar.</p>
-              <div class="status">Environmental performance · Material safety</div>
-            </div>
-          </article>
-        </div>
       </div>
-    </section>
 
-    <section id="publications" class="paper">
-      <div class="wrap">
-        <div class="kicker">Selected publications</div>
-        <h2>Peer-reviewed research</h2>
-        <p class="intro">Selected papers spanning nutrient recovery, hydrothermal conversion, and functional materials.</p>
-        <div class="pubs">
-          <div class="pub">
-            <div class="pub-year">2026</div>
-            <div>
-              <div class="pub-title">Recovery of slow-release multi-nutrient matrix from dairy manure through acid-mediated mild hydrothermal treatment</div>
-              <div class="pub-meta">B. Devnath, B. Gao, T. Reza · Waste Management, 224, 115732</div>
-            </div>
-            <a class="doi" href="https://doi.org/10.1016/j.wasman.2026.115732" target="_blank" rel="noopener">DOI ↗</a>
-          </div>
-          <div class="pub">
-            <div class="pub-year">2026</div>
-            <div>
-              <div class="pub-title">Nutrient recovery from co-hydrothermal carbonization of animal manures: Synergistic effects on hydrochar properties and agronomic potential</div>
-              <div class="pub-meta">B. Devnath, S. Khanal, A. Shah, T. M. Reza · Waste Management, 213, 115391</div>
-            </div>
-            <a class="doi" href="https://doi.org/10.1016/j.wasman.2026.115391" target="_blank" rel="noopener">DOI ↗</a>
-          </div>
-          <div class="pub">
-            <div class="pub-year">2026</div>
-            <div>
-              <div class="pub-title">Hydrochar and biochar from dairy manure as stable carbon amendments for greenhouse gas mitigation and carbon sequestration in concentrated animal feeding operations</div>
-              <div class="pub-meta">B. Devnath, S. Khanal, A. Shah, T. M. Reza · Environmental research cummunications, Volume 8, Number 6</div>
-            </div>
-            <a class="doi" href="https://doi.org/10.1088/2515-7620/ae74a0" target="_blank" rel="noopener">DOI ↗</a>
-          </div>
-          <div class="pub">
-            <div class="pub-year">2026</div>
-            <div>
-              <div class="pub-title">Durable, Hydrophobic and Porous Zeolite 13X Coatings for Resisting Liquid Water During CO₂ Desorption</div>
-              <div class="pub-meta">S. B. Olushola, K. M. A. Bocus, B. Devnath, M. T. Reza, D. G. Pahinkar · Surfaces and Interfaces</div>
-            </div>
-            <a class="doi" href="https://doi.org/10.1016/j.surfin.2026.108554" target="_blank" rel="noopener">DOI ↗</a>
-          </div>
-          <div class="pub">
-            <div class="pub-year">2024</div>
-            <div>
-              <div class="pub-title">Influence of Hydrothermal Carbonization (HTC) Temperature on Hydrochar and Process Liquid for Poultry, Swine, and Dairy Manure</div>
-              <div class="pub-meta">B. Devnath, S. Khanal, A. Shah, T. Reza · Environments, 11, 150</div>
-            </div>
-            <a class="doi" href="https://doi.org/10.3390/environments11070150" target="_blank" rel="noopener">DOI ↗</a>
-          </div>
-        </div>
+      <div style="height:48px"></div>
+      <div class="kicker">Conference Highlights</div>
+      <h2 style="font-size:2.6rem">Research communication</h2>
+
+      <div class="conf-grid">
+        <article class="conf-card">
+          <div class="year">ASABE · 2026</div>
+          <h3>Three research presentations + session co-moderation</h3>
+          <p>
+            Presented three research talks at the 2026 ASABE Annual International Meeting,
+            including work on the techno-economic and life-cycle assessment of slow-release
+            multi-nutrient fertilizer production from manure via acid-mediated hydrothermal
+            carbonization. Also contributed to technical-session moderation.
+          </p>
+          <span style="margin-top:auto;color:var(--muted);font-size:.86rem;font-weight:700">
+            ASABE Annual International Meeting · 2026
+          </span>
+        </article>
+
+        <article class="conf-card">
+          <div class="year">AIChE · 2025</div>
+          <h3>Two talks + one poster</h3>
+          <p>Presented multiple pieces of PhD research at the AIChE Annual Meeting in Boston and used the meeting to build new technical connections.</p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7395113261932716032/" target="_blank" rel="noopener">View LinkedIn post ↗</a>
+        </article>
+
+        <article class="conf-card">
+          <div class="year">ASABE · 2024</div>
+          <h3>Two oral presentations + session co-moderation</h3>
+          <p>Presented two research talks at the ASABE Annual International Meeting in Anaheim and co-moderated two oral sessions.</p>
+          <a href="https://www.linkedin.com/posts/bilash-devnath_asabe2024-research-networking-activity-7224990904397242369-HaXr" target="_blank" rel="noopener">View LinkedIn post ↗</a>
+        </article>
+
+        <article class="conf-card">
+          <div class="year">Florida Academy of Sciences</div>
+          <h3>Graduate presentation recognition</h3>
+          <p>Received Outstanding Graduate Student Presentation recognition for research on hydrochar/biochar and carbon sequestration.</p>
+          <a href="https://www.linkedin.com/in/bilash-devnath" target="_blank" rel="noopener">View LinkedIn profile ↗</a>
+        </article>
       </div>
-    </section>
-
-    <section id="recognition">
-      <div class="wrap">
-        <div class="kicker">Recognition</div>
-        <h2>Awards, presentations & leadership</h2>
-        <div class="recognition">
-          <div class="award"><div class="year">2025–2026</div><strong>Outstanding Graduate Student</strong><span>Florida Institute of Technology</span></div>
-          <div class="award"><div class="year">2025</div><strong>NASA Florida Space Grant Consortium Award</strong><span>Research recognition</span></div>
-          <div class="award"><div class="year">2025</div><strong>Phi Kappa Phi Honor Society</strong><span>Inducted at Florida Tech</span></div>
-          <div class="award"><div class="year">2025</div><strong>Outstanding Graduate Student Presentation</strong><span>Florida Academy of Sciences</span></div>
-          <div class="award"><div class="year">2025</div><strong>Outstanding Student Presentation</strong><span>ASABE Florida Section</span></div>
-          <div class="award"><div class="year">2024</div><strong>Presentation Excellence Award</strong><span>ASABE Annual Meeting</span></div>
-        </div>
-
-        <div style="height:48px"></div>
-        <div class="group-grid">
-          <div class="group-photo"><img src="assets/research-group.webp" alt="Reza Research Group at Florida Tech"></div>
-          <div>
-            <div class="kicker">Research community</div>
-            <h2 style="font-size:2.5rem">Research, mentoring & collaboration</h2>
-            <p class="intro" style="margin-bottom:16px">
-              My graduate work includes collaborative experimental research, mentoring undergraduate researchers,
-              conference presentations, teaching, and student leadership.
-            </p>
-            <div class="chips">
-              <span class="chip">Reza Research Group</span>
-              <span class="chip">Teaching</span>
-              <span class="chip">Mentoring</span>
-              <span class="chip">AIChE</span>
-              <span class="chip">ASABE</span>
-              <span class="chip">Conference Presentations</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="paper">
-      <div class="wrap">
-        <div class="contact-card">
-          <div>
-            <div class="kicker">Contact</div>
-            <h2>Let’s connect.</h2>
-            <p>I’m interested in research collaborations and R&amp;D opportunities in resource recovery, separations, critical materials, hydrothermal processing, and sustainable chemical engineering.</p>
-          </div>
-          <div class="contact-links">
-            <a href="mailto:bdevnath2023@my.fit.edu">Email · bdevnath2023@my.fit.edu</a>
-            <a href="https://www.linkedin.com/in/bilash-devnath" target="_blank" rel="noopener">LinkedIn · bilash-devnath ↗</a>
-            <a href="https://scholar.google.com/citations?user=A9I6fXMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar · Publications ↗</a>
-            <a href="https://orcid.org/0009-0006-0659-3013" target="_blank" rel="noopener">ORCID · 0009-0006-0659-3013 ↗</a>
-            <a href="Bilash_Devnath_CV.pdf" target="_blank">Curriculum Vitae · PDF ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer">
-      <span>© <span id="year"></span> Bilash Devnath</span>
-      <span>Chemical Engineering · Resource Recovery · Sustainable Materials</span>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const btn = document.getElementById("menuBtn");
-    const links = document.getElementById("navLinks");
-    btn.addEventListener("click", () => links.classList.toggle("open"));
-    links.querySelectorAll("a").forEach(a => a.addEventListener("click", () => links.classList.remove("open")));
-  </script>
+  <section id="leadership" class="paper">
+    <div class="wrap leadership-grid">
+      <div class="group-photo"><img src="assets/research-group.webp" alt="Reza Research Group at Florida Tech"></div>
+      <div>
+        <div class="kicker">Leadership, mentoring & service</div>
+        <h2>Leadership, mentoring & scientific community engagement.</h2>
+        <p class="intro">This section is intentionally separate from awards. It focuses on mentoring, teaching, professional service, and student-community leadership.</p>
+        <div class="lead-list">
+
+          <div class="lead-item">
+            <div class="mini">Research Mentoring</div>
+            <strong>Undergraduate Research Mentorship</strong>
+            <p>Mentor undergraduate researchers in experimental work, materials characterization, data interpretation, and technical communication.</p>
+          </div>
+
+          <div class="lead-item">
+            <div class="mini">Teaching</div>
+            <strong>Teaching Assistant · Chemical Engineering / Materials Laboratory</strong>
+            <p>Supported laboratory instruction in materials properties, experimental methods, laboratory practice, and data analysis at Florida Institute of Technology.</p>
+          </div>
+
+          <div class="lead-item">
+            <div class="mini">Student Leadership</div>
+            <strong>President · Bangladeshi Student Association</strong>
+            <p>Led student-community programming, event organization, member engagement, and leadership transition at Florida Institute of Technology.</p>
+          </div>
+
+          <div class="lead-item">
+            <div class="mini">Student Leadership</div>
+            <strong>Vice President · Badminton Club</strong>
+            <p>Support club activities, practices, matches, and community engagement for the Florida Tech Badminton Club.</p>
+          </div>
+
+          <div class="lead-item">
+            <div class="mini">Professional Service</div>
+            <strong>Conference Session Moderation</strong>
+            <p>Co-moderated oral technical sessions at the ASABE Annual International Meeting while also presenting research.</p>
+          </div>
+
+        </div>
+        <div class="chips"><span class="chip">Mentoring</span><span class="chip">Teaching</span><span class="chip">AIChE</span><span class="chip">ASABE</span><span class="chip">BSA</span><span class="chip">Badminton Club</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <div><div class="kicker">Contact</div><h2>Let’s connect.</h2><p>I’m interested in research collaborations and R&amp;D opportunities in resource recovery, separations, critical materials, hydrothermal processing, and sustainable chemical engineering.</p></div>
+        <div class="contact-links">
+          <a href="mailto:bdevnath2023@my.fit.edu">Email · bdevnath2023@my.fit.edu</a>
+          <a href="https://www.linkedin.com/in/bilash-devnath" target="_blank" rel="noopener">LinkedIn · bilash-devnath ↗</a>
+          <a href="https://scholar.google.com/citations?user=A9I6fXMAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar · Publications ↗</a>
+          <a href="https://orcid.org/0009-0006-0659-3013" target="_blank" rel="noopener">ORCID · 0009-0006-0659-3013 ↗</a>
+          <a href="Bilash_Devnath_CV.pdf" target="_blank">Curriculum Vitae · PDF ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap footer"><span>© <span id="year"></span> Bilash Devnath</span><span>Chemical Engineering · Resource Recovery · Sustainable Materials</span></div></footer>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+const btn=document.getElementById("menuBtn"),links=document.getElementById("navLinks");
+btn.addEventListener("click",()=>links.classList.toggle("open"));
+links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>links.classList.remove("open")));
+</script>
 </body>
 </html>
