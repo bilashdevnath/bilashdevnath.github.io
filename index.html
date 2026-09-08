@@ -52,7 +52,7 @@
     .pubs{display:grid;gap:12px}.pub{display:grid;grid-template-columns:80px 1fr auto;gap:20px;align-items:start;padding:22px 0;border-top:1px solid var(--line)}.pub-year{font-weight:900;color:var(--maroon)}.pub-title{font-weight:800;line-height:1.35;margin-bottom:5px}.pub-meta{color:var(--muted);font-size:.92rem}.doi{text-decoration:none;color:var(--maroon);font-size:.88rem;font-weight:800;white-space:nowrap}
     .recognition{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:18px
     }
     .award{
@@ -66,30 +66,25 @@
       transform:translateY(-3px);
       box-shadow:0 16px 40px rgba(34,27,21,.08)
     }
+    .award.featured{grid-column:span 2}
     .award-photo{
-      position:relative;
       width:100%;
-      height:190px;
+      height:185px;
       overflow:hidden;
-      background:linear-gradient(135deg,#f4eeef,#eef3ef)
+      background:#f4f1ed
     }
     .award-photo img{
       width:100%;
       height:100%;
       object-fit:cover
     }
-    .award-photo.placeholder::after{
-      content:"Add award photo";
-      position:absolute;
-      inset:0;
-      display:grid;
-      place-items:center;
-      color:#8d8387;
-      font-size:.82rem;
-      font-weight:800;
-      letter-spacing:.05em;
-      text-transform:uppercase
+    .award-photo.contain{
+      background:#fff;
+      padding:12px
     }
+    .award-photo.contain img{object-fit:contain}
+    .award-photo.outstanding img{object-position:center 63%}
+    .award-photo.hydrochar img{object-position:center 28%}
     .award-body{padding:18px}
     .award .year{
       font-size:.76rem;
@@ -109,16 +104,163 @@
       font-size:.89rem;
       color:var(--muted)
     }
-    .conf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}.conf-card{border:1px solid var(--line);border-radius:18px;padding:20px;background:#fff;display:flex;flex-direction:column;min-height:190px}.conf-card .year{font-size:.75rem;font-weight:850;color:var(--green);letter-spacing:.08em;text-transform:uppercase}.conf-card h3{font-size:1.08rem;line-height:1.25;margin:8px 0}.conf-card p{font-size:.9rem;color:var(--muted);margin:0 0 16px}.conf-card a{margin-top:auto;text-decoration:none;color:var(--maroon);font-weight:800;font-size:.86rem}
-    .leadership-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}.group-photo{border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.group-photo img{width:100%}.lead-list{display:grid;gap:12px}.lead-item{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}.lead-item .mini{font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--green);font-weight:850}.lead-item strong{display:block;margin:4px 0}.lead-item p{margin:0;color:var(--muted);font-size:.91rem}
+
+    .conference-feature{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:28px;
+      align-items:stretch;
+      margin-top:24px;
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 14px 38px rgba(34,27,21,.05)
+    }
+    .conference-feature .photo{
+      min-height:340px;
+      background:#edeae6
+    }
+    .conference-feature .photo img{
+      width:100%;
+      height:100%;
+      min-height:340px;
+      object-fit:cover
+    }
+    .conference-feature .copy{
+      padding:30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center
+    }
+    .conference-feature .year{
+      color:var(--green);
+      font-size:.76rem;
+      font-weight:850;
+      letter-spacing:.1em;
+      text-transform:uppercase
+    }
+    .conference-feature h3{
+      margin:9px 0 12px;
+      font-size:1.65rem;
+      line-height:1.18;
+      letter-spacing:-.02em
+    }
+    .conference-feature p{
+      margin:0;
+      color:var(--muted)
+    }
+    .conference-feature .note{
+      margin-top:18px;
+      font-size:.86rem;
+      font-weight:750;
+      color:var(--maroon)
+    }
+    .conf-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:14px
+    }
+    .conf-card{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      background:#fff;
+      display:flex;
+      flex-direction:column;
+      min-height:210px
+    }
+    .conf-card .year{
+      font-size:.75rem;
+      font-weight:850;
+      color:var(--green);
+      letter-spacing:.08em;
+      text-transform:uppercase
+    }
+    .conf-card h3{
+      font-size:1.08rem;
+      line-height:1.25;
+      margin:8px 0
+    }
+    .conf-card p{
+      font-size:.9rem;
+      color:var(--muted);
+      margin:0 0 16px
+    }
+    .conf-card a{
+      margin-top:auto;
+      text-decoration:none;
+      color:var(--maroon);
+      font-weight:800;
+      font-size:.86rem
+    }
+
+    .leadership-grid{
+      display:grid;
+      grid-template-columns:.94fr 1.06fr;
+      gap:38px;
+      align-items:start
+    }
+    .engagement-gallery{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      grid-template-rows:1fr 1fr;
+      gap:12px;
+      min-height:610px
+    }
+    .engagement-tile{
+      position:relative;
+      overflow:hidden;
+      border-radius:20px;
+      background:#e9e6e2;
+      box-shadow:0 16px 38px rgba(35,27,22,.08)
+    }
+    .engagement-tile.main{grid-row:1 / span 2}
+    .engagement-tile img{
+      width:100%;
+      height:100%;
+      object-fit:cover
+    }
+    .engagement-tile.main img{object-position:center}
+    .engagement-tile.badminton img{object-position:center}
+    .engagement-tile.bsa img{object-position:center 52%}
+    .engagement-label{
+      position:absolute;
+      left:12px;
+      bottom:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.92);
+      color:var(--ink);
+      font-size:.75rem;
+      font-weight:850;
+      box-shadow:0 6px 18px rgba(0,0,0,.08)
+    }
+    .lead-list{display:grid;gap:12px}
+    .lead-item{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      background:#fff
+    }
+    .lead-item .mini{
+      font-size:.74rem;
+      text-transform:uppercase;
+      letter-spacing:.09em;
+      color:var(--green);
+      font-weight:850
+    }
+    .lead-item strong{display:block;margin:4px 0}
+    .lead-item p{margin:0;color:var(--muted);font-size:.91rem}
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.chip{background:var(--green-soft);color:#315b47;border-radius:999px;padding:8px 11px;font-size:.84rem;font-weight:700}
     .contact-card{padding:42px;border-radius:28px;background:linear-gradient(135deg,var(--maroon-dark),var(--maroon));color:#fff;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}.contact-card .kicker{color:#f7cbd8}.contact-card h2{margin-bottom:12px}.contact-card p{color:#f4dfe5;margin:0}.contact-links{display:grid;gap:10px}.contact-links a{padding:14px 16px;border:1px solid rgba(255,255,255,.25);border-radius:13px;text-decoration:none;background:rgba(255,255,255,.08);font-weight:750}
     footer{padding:34px 0 48px;color:#7b8087;font-size:.88rem}.footer{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:24px}
     @media(max-width:980px){
-      .hero,.about-grid,.featured,.leadership-grid,.contact-card{grid-template-columns:1fr}.hero{gap:38px}.hero-photo{min-height:0;max-width:680px}.hero-photo img{min-height:0;aspect-ratio:4/5}.projects{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:repeat(2,1fr)}.story>div:nth-child(2){border-right:0}.story>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.recognition,.conf-grid{grid-template-columns:repeat(2,1fr)}
+      .hero,.about-grid,.featured,.leadership-grid,.contact-card,.conference-feature{grid-template-columns:1fr}.hero{gap:38px}.hero-photo{min-height:0;max-width:680px}.hero-photo img{min-height:0;aspect-ratio:4/5}.projects{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:repeat(2,1fr)}.story>div:nth-child(2){border-right:0}.story>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.recognition,.conf-grid{grid-template-columns:repeat(2,1fr)}.award.featured{grid-column:span 2}.engagement-gallery{min-height:560px}
     }
     @media(max-width:720px){
-      .wrap{width:min(var(--max),calc(100% - 28px))}.menu{display:block}.navlinks{display:none;position:absolute;left:14px;right:14px;top:64px;flex-direction:column;align-items:flex-start;gap:14px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow)}.navlinks.open{display:flex}.hero{padding-top:50px}h1{font-size:3.65rem}section{padding:64px 0}.facts,.projects,.metrics,.recognition,.conf-grid,.story{grid-template-columns:1fr}.story>div{border-right:0;border-bottom:1px solid var(--line)}.story>div:last-child{border-bottom:0}.pub{grid-template-columns:1fr;gap:7px}.contact-card{padding:28px}.footer{flex-direction:column}
+      .wrap{width:min(var(--max),calc(100% - 28px))}.menu{display:block}.navlinks{display:none;position:absolute;left:14px;right:14px;top:64px;flex-direction:column;align-items:flex-start;gap:14px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow)}.navlinks.open{display:flex}.hero{padding-top:50px}h1{font-size:3.65rem}section{padding:64px 0}.facts,.projects,.metrics,.recognition,.conf-grid,.story{grid-template-columns:1fr}.award.featured{grid-column:span 1}.engagement-gallery{grid-template-columns:1fr;grid-template-rows:auto;min-height:0}.engagement-tile.main{grid-row:auto}.engagement-tile{aspect-ratio:4/3}.story>div{border-right:0;border-bottom:1px solid var(--line)}.story>div:last-child{border-bottom:0}.pub{grid-template-columns:1fr;gap:7px}.contact-card{padding:28px}.footer{flex-direction:column}
     }
   </style>
 </head>
@@ -258,70 +400,57 @@
     <div class="wrap">
       <div class="kicker">Awards & Recognition</div>
       <h2>Recognition for research, scholarship & technical communication.</h2>
-      <p class="intro">
-        Selected awards and honors recognizing research achievement,
-        scientific communication, scholarship, and academic contribution.
-      </p>
+      <p class="intro">Selected recognition for research excellence, technical communication, and academic achievement.</p>
 
       <div class="recognition">
 
-        <article class="award">
-          <div class="award-photo">
-            <img src="assets/award-outstanding-graduate.webp"
-                 alt="Outstanding Graduate Student of the Year"
-                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+        <article class="award featured">
+          <div class="award-photo outstanding">
+            <img src="assets/award-outstanding-graduate.webp" alt="Outstanding Graduate Student recognition at Florida Institute of Technology">
           </div>
           <div class="award-body">
             <div class="year">2025–2026</div>
             <strong>Outstanding Graduate Student of the Year</strong>
-            <span>Florida Institute of Technology</span>
+            <span>Florida Institute of Technology · Chemistry and Chemical Engineering</span>
           </div>
         </article>
 
         <article class="award">
           <div class="award-photo">
-            <img src="assets/award-nasa-space-grant.webp"
-                 alt="NASA Florida Space Grant Consortium Award"
-                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+            <img src="assets/award-nasa-space-grant.webp" alt="NASA Florida Space Grant program recognition">
           </div>
           <div class="award-body">
             <div class="year">2025</div>
             <strong>NASA Florida Space Grant Consortium Award</strong>
-            <span>Near Space Investigation Program</span>
+            <span>Near Space Investigation Program · Center for Space Education</span>
           </div>
         </article>
 
         <article class="award">
-          <div class="award-photo">
-            <img src="assets/award-fas-2025.webp"
-                 alt="Florida Academy of Sciences presentation award"
-                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          <div class="award-photo contain">
+            <img src="assets/award-fas-2025.webp" alt="Florida Academy of Sciences Outstanding Graduate Oral Presentation certificate">
           </div>
           <div class="award-body">
             <div class="year">2025</div>
-            <strong>Outstanding Graduate Student Presentation</strong>
-            <span>Florida Academy of Sciences</span>
+            <strong>Outstanding Graduate Oral Presentation</strong>
+            <span>Florida Academy of Sciences Annual Meeting</span>
           </div>
         </article>
 
         <article class="award">
           <div class="award-photo">
-            <img src="assets/award-asabe-florida-2025.webp"
-                 alt="ASABE Florida Section presentation award"
-                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+            <img src="assets/award-asabe-florida-2025.webp" alt="Bilash Devnath receiving recognition at the ASABE Florida Section meeting">
           </div>
           <div class="award-body">
             <div class="year">2025</div>
-            <strong>Outstanding Student Presentation</strong>
-            <span>ASABE Florida Section</span>
+            <strong>Graduate Student Oral Competition · 3rd Place</strong>
+            <span>Florida Section of ASABE Annual Meeting</span>
           </div>
         </article>
 
         <article class="award">
-          <div class="award-photo">
-            <img src="assets/award-phi-kappa-phi.webp"
-                 alt="Phi Kappa Phi Honor Society"
-                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          <div class="award-photo contain">
+            <img src="assets/award-phi-kappa-phi.webp" alt="Phi Kappa Phi Honor Society emblem">
           </div>
           <div class="award-body">
             <div class="year">2025</div>
@@ -332,55 +461,54 @@
 
         <article class="award">
           <div class="award-photo">
-            <img src="assets/award-asabe-2024.webp"
-                 alt="ASABE Presentation Excellence Award"
-                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+            <img src="assets/award-asabe-2024.webp" alt="Bilash Devnath presenting at the 2024 ASABE Annual International Meeting">
           </div>
           <div class="award-body">
             <div class="year">2024</div>
             <strong>Presentation Excellence Award</strong>
-            <span>ASABE Annual International Meeting</span>
+            <span>ASABE Annual International Meeting · Anaheim, California</span>
           </div>
         </article>
 
         <article class="award">
-          <div class="award-photo">
-            <img src="assets/award-hydrochar-2024.webp"
-                 alt="Hydrochar and Biochar Conference student presentation award"
-                 onerror="this.style.display='none';this.parentElement.classList.add('placeholder')">
+          <div class="award-photo hydrochar">
+            <img src="assets/award-hydrochar-2024.webp" alt="Bilash Devnath presenting at the 2024 Hydrochar and Biochar Conference">
           </div>
           <div class="award-body">
             <div class="year">2024</div>
             <strong>2nd Best Student Presentation</strong>
-            <span>Hydrochar & Biochar Conference</span>
+            <span>Hydrochar & Biochar Conference · Rapid City, South Dakota</span>
           </div>
         </article>
 
       </div>
 
-      <div style="height:48px"></div>
+      <div style="height:54px"></div>
       <div class="kicker">Conference Highlights</div>
       <h2 style="font-size:2.6rem">Research communication</h2>
 
-      <div class="conf-grid">
-        <article class="conf-card">
+      <article class="conference-feature">
+        <div class="photo">
+          <img src="assets/conference-asabe-2026.webp" alt="Bilash Devnath at the 2026 ASABE Annual International Meeting">
+        </div>
+        <div class="copy">
           <div class="year">ASABE · 2026</div>
           <h3>Three research presentations + session co-moderation</h3>
           <p>
             Presented three research talks at the 2026 ASABE Annual International Meeting,
             including work on the techno-economic and life-cycle assessment of slow-release
             multi-nutrient fertilizer production from manure via acid-mediated hydrothermal
-            carbonization. Also contributed to technical-session moderation.
+            carbonization.
           </p>
-          <span style="margin-top:auto;color:var(--muted);font-size:.86rem;font-weight:700">
-            ASABE Annual International Meeting · 2026
-          </span>
-        </article>
+          <div class="note">ASABE Annual International Meeting · 2026</div>
+        </div>
+      </article>
 
+      <div class="conf-grid">
         <article class="conf-card">
           <div class="year">AIChE · 2025</div>
           <h3>Two talks + one poster</h3>
-          <p>Presented multiple pieces of PhD research at the AIChE Annual Meeting in Boston and used the meeting to build new technical connections.</p>
+          <p>Presented multiple pieces of PhD research at the AIChE Annual Meeting in Boston and connected with researchers across sustainable processing and resource recovery.</p>
           <a href="https://www.linkedin.com/feed/update/urn:li:activity:7395113261932716032/" target="_blank" rel="noopener">View LinkedIn post ↗</a>
         </article>
 
@@ -392,10 +520,10 @@
         </article>
 
         <article class="conf-card">
-          <div class="year">Florida Academy of Sciences</div>
-          <h3>Graduate presentation recognition</h3>
-          <p>Received Outstanding Graduate Student Presentation recognition for research on hydrochar/biochar and carbon sequestration.</p>
-          <a href="https://www.linkedin.com/in/bilash-devnath" target="_blank" rel="noopener">View LinkedIn profile ↗</a>
+          <div class="year">Florida Academy of Sciences · 2025</div>
+          <h3>Outstanding Graduate Oral Presentation</h3>
+          <p>Recognized for an oral presentation in the Environmental and Chemical Sciences section at the 88th Annual Meeting.</p>
+          <a href="https://www.linkedin.com/in/bilash-devnath" target="_blank" rel="noopener">LinkedIn profile ↗</a>
         </article>
       </div>
     </div>
@@ -403,11 +531,28 @@
 
   <section id="leadership" class="paper">
     <div class="wrap leadership-grid">
-      <div class="group-photo"><img src="assets/research-group.webp" alt="Reza Research Group at Florida Tech"></div>
+
+      <div class="engagement-gallery" aria-label="Leadership, mentoring and community engagement photos">
+        <figure class="engagement-tile main">
+          <img src="assets/leadership-mentoring.webp" alt="Students working with X-ray diffraction instrumentation in the laboratory">
+          <figcaption class="engagement-label">Research mentoring</figcaption>
+        </figure>
+
+        <figure class="engagement-tile badminton">
+          <img src="assets/leadership-badminton.webp" alt="Florida Tech Badminton Club practice">
+          <figcaption class="engagement-label">Badminton Club</figcaption>
+        </figure>
+
+        <figure class="engagement-tile bsa">
+          <img src="assets/leadership-bsa.webp" alt="Bangladeshi Student Association at Florida Tech">
+          <figcaption class="engagement-label">BSA · Florida Tech</figcaption>
+        </figure>
+      </div>
+
       <div>
-        <div class="kicker">Leadership, mentoring & service</div>
+        <div class="kicker">Leadership, Mentoring & Service</div>
         <h2>Leadership, mentoring & scientific community engagement.</h2>
-        <p class="intro">This section is intentionally separate from awards. It focuses on mentoring, teaching, professional service, and student-community leadership.</p>
+
         <div class="lead-list">
 
           <div class="lead-item">
@@ -424,25 +569,33 @@
 
           <div class="lead-item">
             <div class="mini">Student Leadership</div>
-            <strong>President · Bangladeshi Student Association</strong>
-            <p>Led student-community programming, event organization, member engagement, and leadership transition at Florida Institute of Technology.</p>
+            <strong>President · Bangladeshi Student Association · 2024–2026</strong>
+            <p>Led student-community programming, event organization, member engagement, and committee transition at Florida Institute of Technology.</p>
           </div>
 
           <div class="lead-item">
             <div class="mini">Student Leadership</div>
-            <strong>Vice President · Badminton Club</strong>
-            <p>Support club activities, practices, matches, and community engagement for the Florida Tech Badminton Club.</p>
+            <strong>Vice President · Badminton Club · 2026–Present</strong>
+            <p>Support club practices, matches, organization, and community engagement for the Florida Tech Badminton Club.</p>
           </div>
 
           <div class="lead-item">
             <div class="mini">Professional Service</div>
             <strong>Conference Session Moderation</strong>
-            <p>Co-moderated oral technical sessions at the ASABE Annual International Meeting while also presenting research.</p>
+            <p>Co-moderated technical sessions at ASABE Annual International Meetings while also presenting research.</p>
           </div>
 
         </div>
-        <div class="chips"><span class="chip">Mentoring</span><span class="chip">Teaching</span><span class="chip">AIChE</span><span class="chip">ASABE</span><span class="chip">BSA</span><span class="chip">Badminton Club</span></div>
+
+        <div class="chips">
+          <span class="chip">Mentoring</span>
+          <span class="chip">Teaching</span>
+          <span class="chip">ASABE</span>
+          <span class="chip">BSA</span>
+          <span class="chip">Badminton Club</span>
+        </div>
       </div>
+
     </div>
   </section>
 
