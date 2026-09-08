@@ -267,70 +267,155 @@
       font-size:.86rem
     }
 
-    .leadership-grid{
-      display:grid;
-      grid-template-columns:.94fr 1.06fr;
-      gap:38px;
-      align-items:start
-    }
-    .engagement-gallery{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      grid-template-rows:1fr 1fr;
-      gap:12px;
-      min-height:610px
-    }
-    .engagement-tile{
-      position:relative;
-      overflow:hidden;
-      border-radius:20px;
-      background:#e9e6e2;
-      box-shadow:0 16px 38px rgba(35,27,22,.08)
-    }
-    .engagement-tile.main{grid-row:1 / span 2}
-    .engagement-tile img{
-      width:100%;
-      height:100%;
-      object-fit:cover
-    }
-    .engagement-tile.main img{object-position:center}
-    .engagement-tile.badminton img{object-position:center}
-    .engagement-tile.bsa img{object-position:center 52%}
-    .engagement-label{
-      position:absolute;
-      left:12px;
-      bottom:12px;
-      padding:7px 10px;
-      border-radius:999px;
-      background:rgba(255,255,255,.92);
-      color:var(--ink);
-      font-size:.75rem;
-      font-weight:850;
-      box-shadow:0 6px 18px rgba(0,0,0,.08)
-    }
-    .lead-list{display:grid;gap:12px}
-    .lead-item{
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:16px;
-      background:#fff
-    }
-    .lead-item .mini{
-      font-size:.74rem;
-      text-transform:uppercase;
-      letter-spacing:.09em;
-      color:var(--green);
-      font-weight:850
-    }
-    .lead-item strong{display:block;margin:4px 0}
-    .lead-item p{margin:0;color:var(--muted);font-size:.91rem}
+    .leadership-header{
+  max-width:900px;
+  margin-bottom:34px;
+}
+
+.leadership-header h2{
+  max-width:820px;
+  margin-bottom:12px;
+}
+
+.leadership-header p{
+  color:var(--muted);
+  font-size:1.05rem;
+  max-width:780px;
+  margin:0;
+}
+
+.leadership-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.leadership-card{
+  border:1px solid var(--line);
+  border-radius:22px;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  min-height:100%;
+  transition:.2s ease;
+}
+
+.leadership-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 40px rgba(34,27,21,.08);
+}
+
+.leadership-image{
+  height:235px;
+  overflow:hidden;
+  background:#f2efeb;
+}
+
+.leadership-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.leadership-image.mentoring img{
+  object-position:center;
+}
+
+.leadership-image.badminton img{
+  object-position:center;
+}
+
+.leadership-image.bsa{
+  background:#f7f4ef;
+  padding:18px;
+}
+
+.leadership-image.bsa img{
+  object-fit:contain;
+}
+
+.leadership-body{
+  padding:20px;
+  flex:1;
+}
+
+.leadership-body .mini{
+  font-size:.73rem;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--green);
+  font-weight:850;
+}
+
+.leadership-body h3{
+  font-size:1.14rem;
+  line-height:1.3;
+  margin:7px 0 8px;
+}
+
+.leadership-body p{
+  margin:0;
+  color:var(--muted);
+  font-size:.91rem;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:18px;
+}
+
+.service-card{
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+  background:#fff;
+}
+
+.service-card .mini{
+  font-size:.73rem;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--maroon);
+  font-weight:850;
+}
+
+.service-card h3{
+  font-size:1.08rem;
+  margin:6px 0 7px;
+}
+
+.service-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.91rem;
+}
     .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.chip{background:var(--green-soft);color:#315b47;border-radius:999px;padding:8px 11px;font-size:.84rem;font-weight:700}
     .contact-card{padding:42px;border-radius:28px;background:linear-gradient(135deg,var(--maroon-dark),var(--maroon));color:#fff;display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}.contact-card .kicker{color:#f7cbd8}.contact-card h2{margin-bottom:12px}.contact-card p{color:#f4dfe5;margin:0}.contact-links{display:grid;gap:10px}.contact-links a{padding:14px 16px;border:1px solid rgba(255,255,255,.25);border-radius:13px;text-decoration:none;background:rgba(255,255,255,.08);font-weight:750}
     footer{padding:34px 0 48px;color:#7b8087;font-size:.88rem}.footer{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:24px}
-    @media(max-width:980px){
+    @media(max-width:980px){.leadership-cards{
+  grid-template-columns:1fr 1fr;
+}
+
+.leadership-card:first-child{
+  grid-column:span 2;
+}
       .hero,.about-grid,.featured,.leadership-grid,.contact-card,.conference-feature{grid-template-columns:1fr}.hero{gap:38px}.hero-photo{min-height:0;max-width:680px}.hero-photo img{min-height:0;aspect-ratio:4/5}.projects{grid-template-columns:repeat(2,1fr)}.story{grid-template-columns:repeat(2,1fr)}.story>div:nth-child(2){border-right:0}.story>div:nth-child(-n+2){border-bottom:1px solid var(--line)}.recognition,.conf-grid{grid-template-columns:repeat(2,1fr)}.award.featured{grid-column:span 2}.engagement-gallery{min-height:560px}
     }
-    @media(max-width:720px){
+    @media(max-width:720px){.leadership-cards,
+.service-grid{
+  grid-template-columns:1fr;
+}
+
+.leadership-card:first-child{
+  grid-column:span 1;
+}
+
+.leadership-image{
+  height:220px;
+}
       .wrap{width:min(var(--max),calc(100% - 28px))}.menu{display:block}.navlinks{display:none;position:absolute;left:14px;right:14px;top:64px;flex-direction:column;align-items:flex-start;gap:14px;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow)}.navlinks.open{display:flex}.hero{padding-top:50px}h1{font-size:3.65rem}section{padding:64px 0}.facts,.projects,.metrics,.recognition,.conf-grid,.story{grid-template-columns:1fr}.award.featured{grid-column:span 1}.engagement-gallery{grid-template-columns:1fr;grid-template-rows:auto;min-height:0}.engagement-tile.main{grid-row:auto}.engagement-tile{aspect-ratio:4/3}.story>div{border-right:0;border-bottom:1px solid var(--line)}.story>div:last-child{border-bottom:0}.pub{grid-template-columns:1fr;gap:7px}.contact-card{padding:28px}.footer{flex-direction:column}
     }
   </style>
@@ -666,74 +751,151 @@
   </section>
 
   <section id="leadership" class="paper">
-    <div class="wrap leadership-grid">
+  <div class="wrap">
 
-      <div class="engagement-gallery" aria-label="Leadership, mentoring and community engagement photos">
-        <figure class="engagement-tile main">
-          <img src="assets/leadership-mentoring.webp" alt="Students working with X-ray diffraction instrumentation in the laboratory">
-          <figcaption class="engagement-label">Research mentoring</figcaption>
-        </figure>
+    <div class="leadership-header">
+      <div class="kicker">Leadership, Mentoring & Service</div>
 
-        <figure class="engagement-tile badminton">
-          <img src="assets/leadership-badminton.webp" alt="Florida Tech Badminton Club practice">
-          <figcaption class="engagement-label">Badminton Club</figcaption>
-        </figure>
+      <h2>
+        Mentoring researchers and building scientific communities.
+      </h2>
 
-        <figure class="engagement-tile bsa">
-          <img src="assets/leadership-bsa.webp" alt="Bangladeshi Student Association at Florida Tech">
-          <figcaption class="engagement-label">BSA · Florida Tech</figcaption>
-        </figure>
+      <p>
+        Alongside my research, I contribute through undergraduate mentorship,
+        teaching, student leadership, and professional service.
+      </p>
+    </div>
+
+
+    <div class="leadership-cards">
+
+      <!-- Research Mentoring -->
+      <article class="leadership-card">
+
+        <div class="leadership-image mentoring">
+          <img
+            src="assets/leadership-mentoring.webp"
+            alt="Undergraduate researchers working with X-ray diffraction instrumentation">
+        </div>
+
+        <div class="leadership-body">
+          <div class="mini">Research Mentoring</div>
+
+          <h3>Undergraduate Research Mentorship</h3>
+
+          <p>
+            Mentor undergraduate researchers in experimental work,
+            materials characterization, data interpretation, and
+            technical communication.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- BSA -->
+      <article class="leadership-card">
+
+        <div class="leadership-image bsa">
+          <img
+            src="assets/leadership-bsa.webp"
+            alt="Bangladeshi Student Association at Florida Tech">
+        </div>
+
+        <div class="leadership-body">
+          <div class="mini">Student Leadership</div>
+
+          <h3>
+            President · Bangladeshi Student Association
+          </h3>
+
+          <p>
+            2024–2026 · Led student-community programming,
+            event organization, member engagement, and committee
+            transition at Florida Tech.
+          </p>
+        </div>
+
+      </article>
+
+
+      <!-- Badminton -->
+      <article class="leadership-card">
+
+        <div class="leadership-image badminton">
+          <img
+            src="assets/leadership-badminton.webp"
+            alt="Florida Tech Badminton Club practice">
+        </div>
+
+        <div class="leadership-body">
+          <div class="mini">Student Leadership</div>
+
+          <h3>
+            Vice President · Badminton Club
+          </h3>
+
+          <p>
+            2026–Present · Support practices, matches, organization,
+            and community engagement for the Florida Tech Badminton Club.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <div class="service-grid">
+
+      <!-- Teaching -->
+      <div class="service-card">
+
+        <div class="mini">Teaching</div>
+
+        <h3>
+          Teaching Assistant · Chemical Engineering / Materials Laboratory
+        </h3>
+
+        <p>
+          Supported laboratory instruction in materials properties,
+          experimental methods, laboratory practice, and data analysis
+          at Florida Institute of Technology.
+        </p>
+
       </div>
 
-      <div>
-        <div class="kicker">Leadership, Mentoring & Service</div>
-        <h2>Leadership, mentoring & scientific community engagement.</h2>
 
-        <div class="lead-list">
+      <!-- Professional Service -->
+      <div class="service-card">
 
-          <div class="lead-item">
-            <div class="mini">Research Mentoring</div>
-            <strong>Undergraduate Research Mentorship</strong>
-            <p>Mentor undergraduate researchers in experimental work, materials characterization, data interpretation, and technical communication.</p>
-          </div>
+        <div class="mini">Professional Service</div>
 
-          <div class="lead-item">
-            <div class="mini">Teaching</div>
-            <strong>Teaching Assistant · Chemical Engineering / Materials Laboratory</strong>
-            <p>Supported laboratory instruction in materials properties, experimental methods, laboratory practice, and data analysis at Florida Institute of Technology.</p>
-          </div>
+        <h3>
+          Conference Session Moderation
+        </h3>
 
-          <div class="lead-item">
-            <div class="mini">Student Leadership</div>
-            <strong>President · Bangladeshi Student Association · 2024–2026</strong>
-            <p>Led student-community programming, event organization, member engagement, and committee transition at Florida Institute of Technology.</p>
-          </div>
+        <p>
+          Co-moderated technical sessions at ASABE Annual International
+          Meetings while also presenting research.
+        </p>
 
-          <div class="lead-item">
-            <div class="mini">Student Leadership</div>
-            <strong>Vice President · Badminton Club · 2026–Present</strong>
-            <p>Support club practices, matches, organization, and community engagement for the Florida Tech Badminton Club.</p>
-          </div>
-
-          <div class="lead-item">
-            <div class="mini">Professional Service</div>
-            <strong>Conference Session Moderation</strong>
-            <p>Co-moderated technical sessions at ASABE Annual International Meetings while also presenting research.</p>
-          </div>
-
-        </div>
-
-        <div class="chips">
-          <span class="chip">Mentoring</span>
-          <span class="chip">Teaching</span>
-          <span class="chip">ASABE</span>
-          <span class="chip">BSA</span>
-          <span class="chip">Badminton Club</span>
-        </div>
       </div>
 
     </div>
-  </section>
+
+
+    <div class="chips">
+      <span class="chip">Mentoring</span>
+      <span class="chip">Teaching</span>
+      <span class="chip">ASABE</span>
+      <span class="chip">AIChE</span>
+      <span class="chip">Student Leadership</span>
+      <span class="chip">Community Engagement</span>
+    </div>
+
+  </div>
+</section>
 
   <section id="contact">
     <div class="wrap">
