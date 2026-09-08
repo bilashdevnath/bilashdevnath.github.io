@@ -37,9 +37,50 @@
     .kicker{color:var(--maroon);font-weight:850;text-transform:uppercase;letter-spacing:.13em;font-size:.77rem}
     h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-.045em;line-height:1.06;margin:10px 0 18px}
     .intro{font-size:1.08rem;color:var(--muted);max-width:850px;margin:0 0 34px}
-    .about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:54px;align-items:center}
-    .about-photo{border-radius:24px;overflow:hidden;background:#fff}.about-photo img{width:100%;height:auto;object-fit:contain}
-    .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:28px}.fact{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}
+    .about-grid{
+  display:grid;
+  grid-template-columns:1.45fr .75fr;
+  gap:34px;
+  align-items:start;
+  margin-top:34px;
+}
+
+.about-header{
+  max-width:980px;
+}
+
+.about-header h2{
+  max-width:900px;
+}
+
+.about-header .intro{
+  max-width:930px;
+}
+
+.about-photo{
+  border-radius:24px;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--line);
+  padding:10px;
+}
+
+.about-photo img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+.facts{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  margin:0;
+}
+
+.fact{
+  padding:20px;
+}.fact{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}
     .fact small{display:block;color:#8b9299;text-transform:uppercase;letter-spacing:.08em;font-size:.7rem;font-weight:750}.fact strong{display:block;margin-top:4px}
     .featured{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;border:1px solid var(--line);border-radius:28px;padding:28px;background:#fff;box-shadow:0 16px 44px rgba(35,25,20,.05)}
     .featured-visual{border-radius:20px;overflow:hidden;background:#f2f1ed}.featured-visual img{width:100%;aspect-ratio:16/10;object-fit:contain;background:white}
@@ -334,22 +375,80 @@
   </div>
 
   <section id="about" class="paper">
-    <div class="wrap about-grid">
-      <div class="about-photo"><img src="assets/research-collage.webp" alt="Diagram summarizing sustainable nutrient cycles, resource recovery, slow-release fertilizer, materials characterization, and process scale-up"></div>
-      <div>
-        <div class="kicker">About me</div>
-        <h2>Turning complex waste streams into recoverable resources.</h2>
-        <p class="intro">My work sits at the intersection of chemical engineering, environmental sustainability, and materials science. I study how hydrothermal chemistry and separation processes can transform agricultural and industrial wastes into useful nutrient products, carbon-rich materials, and recoverable critical resources.</p>
-        <p class="intro">I am especially interested in research that connects laboratory experiments with real-world deployment: process scale-up, economics, life-cycle impacts, product performance, and data-driven process design.</p>
-        <div class="facts">
-          <div class="fact"><small>Current position</small><strong>PhD Candidate, Florida Tech</strong></div>
-          <div class="fact"><small>Undergraduate education</small><strong>Bangladesh University of Engineering and Technology (BUET) · Chemical Engineering</strong></div>
-          <div class="fact"><small>Research approach</small><strong>Literature & data → Experiment → Product → Validation → Scale-up</strong></div>
-          <div class="fact"><small>Current interests</small><strong>Fertilizer development, critical materials, nutrient circularity & sustainable R&amp;D</strong></div>
-        </div>
-      </div>
+  <div class="wrap">
+
+    <div class="about-header">
+      <div class="kicker">About Me</div>
+
+      <h2>
+        Turning complex waste streams into recoverable resources.
+      </h2>
+
+      <p class="intro">
+        My work sits at the intersection of chemical engineering,
+        environmental sustainability, and materials science. I study how
+        hydrothermal chemistry and separation processes can transform
+        agricultural and industrial wastes into useful nutrient products,
+        carbon-rich materials, and recoverable critical resources.
+      </p>
+
+      <p class="intro">
+        I am especially interested in research that connects laboratory
+        experiments with real-world deployment: process scale-up, economics,
+        life-cycle impacts, product performance, and data-driven process design.
+      </p>
     </div>
-  </section>
+
+
+    <div class="about-grid">
+
+      <div class="about-photo">
+        <img
+          src="assets/about-me.webp"
+          alt="Bilash Devnath research overview showing nutrient recovery, slow-release fertilizer, materials characterization, and process scale-up">
+      </div>
+
+
+      <div class="facts">
+
+        <div class="fact">
+          <small>Current Position</small>
+          <strong>
+            PhD Candidate<br>
+            Florida Institute of Technology
+          </strong>
+        </div>
+
+        <div class="fact">
+          <small>Research Focus</small>
+          <strong>
+            Resource Recovery · Hydrothermal Processing ·
+            Separations · Sustainable Materials
+          </strong>
+        </div>
+
+        <div class="fact">
+          <small>Undergraduate Education</small>
+          <strong>
+            Bangladesh University of Engineering and Technology (BUET)<br>
+            Chemical Engineering
+          </strong>
+        </div>
+
+        <div class="fact">
+          <small>Current Interests</small>
+          <strong>
+            Fertilizer Development · Critical Materials ·
+            Nutrient Circularity · Sustainable R&amp;D
+          </strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
 
   <section id="research">
     <div class="wrap">
